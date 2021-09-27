@@ -307,6 +307,7 @@
     <Content Include="Views\Pruebas\Index.cshtml" />
     <Content Include="Views\Pruebas\Damefecha.cshtml" />
     <Content Include="Views\Pruebas\DameObjetoPrueba.cshtml" />
+    <Content Include="Views\Pruebas\DameFecha2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

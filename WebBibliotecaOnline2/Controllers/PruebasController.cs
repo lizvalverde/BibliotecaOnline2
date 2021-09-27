@@ -24,7 +24,20 @@ namespace WebBibliotecaOnline2.Controllers
 
             return View(valor);
         }
-        public ViewResult  DameObjetoPrueba(int id, string nombre)
+
+        
+        public ActionResult DameFecha2(int dias)
+        {
+            DateTime valor = DateTime.Now;
+
+            //if (id != null)
+            //  valor.AddDays(Convert.ToDouble(id));
+            valor = valor.AddDays(dias);
+
+            return View(valor);
+        }
+        public ActionResult  DameObjetoPrueba(int id, string nombre)
+
         {
             Prueba p = new Prueba();
             p.id = id;
@@ -36,6 +49,22 @@ namespace WebBibliotecaOnline2.Controllers
             //x.ViewData = new ViewDataDictionary();
             //x.ViewData.Model = p;
             //return x;
+        }
+        public ContentResult DameContentResult()
+        {
+            
+            return Content("precioso JESUS");
+        }
+
+        public HttpNotFoundResult DameNotFound()
+        {
+
+            return HttpNotFound();
+        }
+        public RedirectToRouteResult DameRedirect()
+        {
+
+            return RedirectToAction("About","Home");
         }
     }
 }

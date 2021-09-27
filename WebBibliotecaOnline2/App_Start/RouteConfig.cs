@@ -13,11 +13,24 @@ namespace WebBibliotecaOnline2
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+           routes.MapRoute(
+           name: "nombre",
+           url: "Pruebas/DameFecha2/{dias}",
+           defaults: new { controller = "Pruebas", action = "DameFecha2" }
+          );
+            //-----ruta para miaplicacion/controlador/accion/id/nombre  
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+           );
+           
+            //routes.MapRoute(
+            //    name: "nombre",
+            //    url: "Pruebas/DameFecha2/{mes}/{ano}",
+            //    defaults: new { controller = "Pruebas", action = "DameFecha2" }
+            //);
+
         }
     }
 }
