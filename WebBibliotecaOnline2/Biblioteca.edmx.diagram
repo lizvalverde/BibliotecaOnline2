@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="211c2606e57c45cf8c77f3359acc5312" Name="Diagram1">
+        <EntityTypeShape EntityType="Dani_BibIiotecaModel.Biblioteca" Width="1.5" PointX="3.625" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dani_BibIiotecaModel.Pais" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dani_BibIiotecaModel.TipoBiblioteca" Width="1.5" PointX="6.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="Dani_BibIiotecaModel.FK_Biblioteca_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="Dani_BibIiotecaModel.FK_Biblioteca_TipoBiblioteca" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
