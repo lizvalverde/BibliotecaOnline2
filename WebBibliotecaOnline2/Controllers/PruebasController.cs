@@ -24,12 +24,18 @@ namespace WebBibliotecaOnline2.Controllers
 
             return View(valor);
         }
-        public ActionResult  DameObjetoPrueba(int id, string nombre)
+        public ViewResult  DameObjetoPrueba(int id, string nombre)
         {
             Prueba p = new Prueba();
             p.id = id;
             p.nombre = nombre;
             return View(p);
+
+            // (El view es una forma más facil de devolver un new viewresult)
+            //var x = new ViewResult();
+            //x.ViewData = new ViewDataDictionary();
+            //x.ViewData.Model = p;
+            //return x;
         }
     }
 }
