@@ -12,12 +12,12 @@ namespace WebBibliotecaOnline2
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-           routes.MapRoute(
-           name: "nombre",
-           url: "Pruebas/DameFecha2/{dias}",
-           defaults: new { controller = "Pruebas", action = "DameFecha2" }
-          );
+            routes.MapMvcAttributeRoutes();
+          // routes.MapRoute(
+          // name: "nombre",
+          // url: "Pruebas/DameFecha2/{dias}",
+          // defaults: new { controller = "Pruebas", action = "DameFecha2" }
+          //);
             //-----ruta para miaplicacion/controlador/accion/id/nombre  
             routes.MapRoute(
                name: "Default",

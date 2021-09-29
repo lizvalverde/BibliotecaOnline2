@@ -25,7 +25,7 @@ namespace WebBibliotecaOnline2.Controllers
             return View(valor);
         }
 
-        
+        [Route("Pruebas/DameFecha2/{dias}")]
         public ActionResult DameFecha2(int dias)
         {
             DateTime valor = DateTime.Now;
