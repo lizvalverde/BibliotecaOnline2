@@ -66,5 +66,19 @@ namespace WebBibliotecaOnline2.Controllers
 
             return RedirectToAction("About","Home");
         }
+        public ActionResult ObjetoMultiple()
+        {
+            List<int> listaprueba = new List<int>();
+
+            listaprueba.Add(1);
+            listaprueba.Add(2);
+
+            List <PruebaVariasPropiedades> parte= new List<PruebaVariasPropiedades>();
+
+            parte.Add(new PruebaVariasPropiedades() { id = 1, nombre = "liz", lista= listaprueba });
+            parte.Add(new PruebaVariasPropiedades() { id =2, nombre ="chain ring", lista= listaprueba });
+
+            return View(parte);
+        }
     }
 }

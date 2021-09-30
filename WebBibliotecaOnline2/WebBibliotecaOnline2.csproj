@@ -220,6 +220,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pruebas\Prueba.cs" />
+    <Compile Include="Models\Pruebas\PruebaVariasPropiedades.cs" />
     <Compile Include="Pais.cs">
       <DependentUpon>Biblioteca.tt</DependentUpon>
     </Compile>
@@ -308,6 +309,7 @@
     <Content Include="Views\Pruebas\Damefecha.cshtml" />
     <Content Include="Views\Pruebas\DameObjetoPrueba.cshtml" />
     <Content Include="Views\Pruebas\DameFecha2.cshtml" />
+    <Content Include="Views\Pruebas\ObjetoMultiple.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,15 @@
+﻿@using WebBibliotecaOnline2.Models.Pruebas
+@model List<PruebaVariasPropiedades>
+@{
+    ViewBag.Title = "ObjetoMultiple";
+}
+
+<h2>ObjetoMultiple</h2>
+@foreach (PruebaVariasPropiedades a in  Model )
+{
+    @a.id;
+    @a.nombre
+
+}
+
+
