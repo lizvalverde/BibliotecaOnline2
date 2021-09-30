@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebBibliotecaOnline2.Models.Pruebas;
+using WebBibliotecaOnline2.ViewModels.Pruebas;
 
 namespace WebBibliotecaOnline2.Controllers
 {

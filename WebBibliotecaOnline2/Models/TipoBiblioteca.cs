@@ -7,23 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebBibliotecaOnline2
+namespace WebBibliotecaOnline2.ViewModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Pais
+    public partial class TipoBiblioteca
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Pais()
+        public TipoBiblioteca()
         {
             this.Biblioteca = new HashSet<Biblioteca>();
         }
     
-        public int PaisId { get; set; }
+        public int TipoBibliotecaId { get; set; }
         public string Nombre { get; set; }
-        public Nullable<decimal> Latitud { get; set; }
-        public Nullable<decimal> Longitud { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Biblioteca> Biblioteca { get; set; }
