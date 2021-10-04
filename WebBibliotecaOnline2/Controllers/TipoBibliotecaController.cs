@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using WebBibliotecaOnline2.Models;
@@ -10,13 +11,25 @@ namespace WebBibliotecaOnline2.Controllers
         // GET: TipoBiblioteca
         public ActionResult Index()
         {
-            List<TipoBiblioteca> lista = new List<TipoBiblioteca>();
-            using(var db = new Dani_BibIiotecaEntities())
-              {
+            try
+            {
+                List<TipoBiblioteca> lista = new List<TipoBiblioteca>();
+                var db = new Dani_BibIiotecaEntities();
                 lista = db.TipoBiblioteca.ToList();
+                db.Dispose();
+                //using ()
+                //{
+                    
 
-               }
-             return View(lista);
+                //}
+                return View(lista);
+            }
+            catch(Exception ex)
+            {
+                // Logger
+                return ErrorController.capturaError(ex);
+            }
+            
         }
     }
 }

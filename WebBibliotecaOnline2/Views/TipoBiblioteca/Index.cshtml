@@ -7,27 +7,34 @@
 
 <h2>Index</h2>
 <div>
-    <table>
-        <thead>Tipo </thead>
-        <thead>Descripcion</thead>
-        
-       
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Descripcion
+                </th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach (var item in Model)
-            {   <tr>
-                  <td>
-                  @item.TipoBibliotecaId
-                  </td>
+            {
+                <tr>
+                    <td>
+                        @item.TipoBibliotecaId
+                    </td>
 
-                 <td>
-                  @item.Nombre
-                 </td>
-                  <td>
-                      
-                 </td>
-             </tr>
+                    <td>
+                        @item.Nombre
+                    </td>
+                    <td>
+                    </td>
+                </tr>
 
             }
-       
-     </table>
-    </div>
+        </tbody>
+    </table>
+</div>
 
