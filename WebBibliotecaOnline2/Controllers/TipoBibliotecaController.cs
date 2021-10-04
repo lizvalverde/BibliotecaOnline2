@@ -13,7 +13,6 @@ namespace WebBibliotecaOnline2.Controllers
         {
             try
             {
-                throw new Exception("wiiii");
                 List<TipoBiblioteca> lista = new List<TipoBiblioteca>();
                 var db = new Dani_BibIiotecaEntities();
                 lista = db.TipoBiblioteca.ToList();
