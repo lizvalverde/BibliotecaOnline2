@@ -19,7 +19,7 @@ namespace WebBibliotecaOnline2.Controllers
         {
             public ActionResult capturaError2(Exception e)
             {
-                return Content(e.Message + " " + e.StackTrace);
+                return Content(e.Message + " ||| " + e.StackTrace);
             }
         }
     }
