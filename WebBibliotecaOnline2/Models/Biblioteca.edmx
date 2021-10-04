@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Dani_BibIiotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Dani_BibIiotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Biblioteca">
           <Key>
             <PropertyRef Name="BibliotecaId" />
@@ -69,45 +69,57 @@
             <End Role="Biblioteca" EntitySet="Biblioteca" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Dani_BibIiotecaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Dani_BibIiotecaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Biblioteca" EntityType="Dani_BibIiotecaModel.Biblioteca" />
+          <EntitySet Name="Pais" EntityType="Dani_BibIiotecaModel.Pais" />
+          <EntitySet Name="TipoBiblioteca" EntityType="Dani_BibIiotecaModel.TipoBiblioteca" />
+          <AssociationSet Name="FK_Biblioteca_Pais" Association="Dani_BibIiotecaModel.FK_Biblioteca_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Biblioteca" EntitySet="Biblioteca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biblioteca_TipoBiblioteca" Association="Dani_BibIiotecaModel.FK_Biblioteca_TipoBiblioteca">
+            <End Role="TipoBiblioteca" EntitySet="TipoBiblioteca" />
+            <End Role="Biblioteca" EntitySet="Biblioteca" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Biblioteca">
           <Key>
             <PropertyRef Name="BibliotecaId" />
           </Key>
           <Property Name="BibliotecaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Identificador" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Identificador" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="IdPais" Type="Int32" Nullable="false" />
           <Property Name="IdTipoBiblioteca" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pais" Relationship="Self.FK_Biblioteca_Pais" FromRole="Biblioteca" ToRole="Pais" />
-          <NavigationProperty Name="TipoBiblioteca" Relationship="Self.FK_Biblioteca_TipoBiblioteca" FromRole="Biblioteca" ToRole="TipoBiblioteca" />
+          <NavigationProperty Name="Pais" Relationship="Dani_BibIiotecaModel.FK_Biblioteca_Pais" FromRole="Biblioteca" ToRole="Pais" />
+          <NavigationProperty Name="TipoBiblioteca" Relationship="Dani_BibIiotecaModel.FK_Biblioteca_TipoBiblioteca" FromRole="Biblioteca" ToRole="TipoBiblioteca" />
         </EntityType>
         <EntityType Name="Pais">
           <Key>
             <PropertyRef Name="PaisId" />
           </Key>
           <Property Name="PaisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Latitud" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Longitud" Type="Decimal" Precision="18" Scale="0" />
-          <NavigationProperty Name="Biblioteca" Relationship="Self.FK_Biblioteca_Pais" FromRole="Pais" ToRole="Biblioteca" />
+          <NavigationProperty Name="Biblioteca" Relationship="Dani_BibIiotecaModel.FK_Biblioteca_Pais" FromRole="Pais" ToRole="Biblioteca" />
         </EntityType>
         <EntityType Name="TipoBiblioteca">
           <Key>
             <PropertyRef Name="TipoBibliotecaId" />
           </Key>
           <Property Name="TipoBibliotecaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Biblioteca" Relationship="Self.FK_Biblioteca_TipoBiblioteca" FromRole="TipoBiblioteca" ToRole="Biblioteca" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Biblioteca" Relationship="Dani_BibIiotecaModel.FK_Biblioteca_TipoBiblioteca" FromRole="TipoBiblioteca" ToRole="Biblioteca" />
         </EntityType>
         <Association Name="FK_Biblioteca_Pais">
-          <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
-          <End Role="Biblioteca" Type="Self.Biblioteca" Multiplicity="*" />
+          <End Type="Dani_BibIiotecaModel.Pais" Role="Pais" Multiplicity="1" />
+          <End Type="Dani_BibIiotecaModel.Biblioteca" Role="Biblioteca" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pais">
               <PropertyRef Name="PaisId" />
@@ -118,8 +130,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Biblioteca_TipoBiblioteca">
-          <End Role="TipoBiblioteca" Type="Self.TipoBiblioteca" Multiplicity="1" />
-          <End Role="Biblioteca" Type="Self.Biblioteca" Multiplicity="*" />
+          <End Type="Dani_BibIiotecaModel.TipoBiblioteca" Role="TipoBiblioteca" Multiplicity="1" />
+          <End Type="Dani_BibIiotecaModel.Biblioteca" Role="Biblioteca" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipoBiblioteca">
               <PropertyRef Name="TipoBibliotecaId" />
@@ -129,20 +141,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Dani_BibIiotecaEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Biblioteca" EntityType="Self.Biblioteca" />
-          <EntitySet Name="Pais" EntityType="Self.Pais" />
-          <EntitySet Name="TipoBiblioteca" EntityType="Self.TipoBiblioteca" />
-          <AssociationSet Name="FK_Biblioteca_Pais" Association="Self.FK_Biblioteca_Pais">
-            <End Role="Pais" EntitySet="Pais" />
-            <End Role="Biblioteca" EntitySet="Biblioteca" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Biblioteca_TipoBiblioteca" Association="Self.FK_Biblioteca_TipoBiblioteca">
-            <End Role="TipoBiblioteca" EntitySet="TipoBiblioteca" />
-            <End Role="Biblioteca" EntitySet="Biblioteca" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -151,30 +150,30 @@
           <EntitySetMapping Name="Biblioteca">
             <EntityTypeMapping TypeName="Dani_BibIiotecaModel.Biblioteca">
               <MappingFragment StoreEntitySet="Biblioteca">
-                <ScalarProperty Name="BibliotecaId" ColumnName="BibliotecaId" />
-                <ScalarProperty Name="Identificador" ColumnName="Identificador" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
                 <ScalarProperty Name="IdTipoBiblioteca" ColumnName="IdTipoBiblioteca" />
+                <ScalarProperty Name="IdPais" ColumnName="IdPais" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Identificador" ColumnName="Identificador" />
+                <ScalarProperty Name="BibliotecaId" ColumnName="BibliotecaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pais">
             <EntityTypeMapping TypeName="Dani_BibIiotecaModel.Pais">
               <MappingFragment StoreEntitySet="Pais">
-                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
                 <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TipoBiblioteca">
             <EntityTypeMapping TypeName="Dani_BibIiotecaModel.TipoBiblioteca">
               <MappingFragment StoreEntitySet="TipoBiblioteca">
-                <ScalarProperty Name="TipoBibliotecaId" ColumnName="TipoBibliotecaId" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="TipoBibliotecaId" ColumnName="TipoBibliotecaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
