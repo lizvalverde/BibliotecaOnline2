@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebBibliotecaOnline2.ViewModels
+namespace WebBibliotecaOnline2.Models
 {
     using System;
     using System.Data.Entity;

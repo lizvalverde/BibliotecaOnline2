@@ -1,0 +1,33 @@
+﻿@using WebBibliotecaOnline2.Models
+
+@model List<TipoBiblioteca>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <table>
+        <thead>Tipo </thead>
+        <thead>Descripcion</thead>
+        
+       
+            @foreach (var item in Model)
+            {   <tr>
+                  <td>
+                  @item.TipoBibliotecaId
+                  </td>
+
+                 <td>
+                  @item.Nombre
+                 </td>
+                  <td>
+                      
+                 </td>
+             </tr>
+
+            }
+       
+     </table>
+    </div>
+
