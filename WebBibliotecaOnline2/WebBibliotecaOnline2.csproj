@@ -233,6 +233,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\error.png" />
     <Content Include="Models\Biblioteca.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Biblioteca.edmx</DependentUpon>
@@ -282,7 +283,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -313,9 +313,11 @@
     <Content Include="Views\Pruebas\DameFecha2.cshtml" />
     <Content Include="Views\Pruebas\ObjetoMultiple.cshtml" />
     <Content Include="Views\TipoBiblioteca\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ErrorController2\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

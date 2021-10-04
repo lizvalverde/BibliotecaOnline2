@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.error {
+    background-color: #800101;
+    color: #ff9595;
+    font-weight: bolder;
+}
