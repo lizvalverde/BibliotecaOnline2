@@ -48,5 +48,31 @@ namespace WebBibliotecaOnline2.Controllers
             }
 
         }
+        [HttpGet]
+        public ActionResult Editar(int id)
+        {
+            try
+            {
+              
+                var db = new Dani_BibIiotecaEntities();
+
+                var objeto = db.TipoBiblioteca.Find(id);
+                db.Dispose();
+                return View(objeto);
+            }
+            catch (Exception ex)
+            {
+                return ErrorController.capturaError(ex);
+
+            }
+
+        }
+        [HttpPost]
+        public ActionResult Editar(TipoBiblioteca modelo)
+        {
+
+            return View(modelo);
+
+        }
     }
 }

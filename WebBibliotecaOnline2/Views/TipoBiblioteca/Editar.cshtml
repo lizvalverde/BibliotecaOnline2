@@ -1,0 +1,36 @@
+﻿@using WebBibliotecaOnline2.Models
+
+@model  TipoBiblioteca
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm("Editar", "TipoBiblioteca", FormMethod.Post))
+{
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th colspan="2" align="center">Tipos Biblioteca</th>
+        </tr>
+        <tr>
+            <td>Id: </td>
+            <td>
+                @Html.TextBoxFor(m=>Model.TipoBibliotecaId)
+            </td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td>
+                @Html.TextBoxFor(m => Model.Nombre)
+            </td>
+        </tr>
+         <tr>
+            <td><input type="submit" value="Guardar" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Cancelar" /></td>
+        </tr>
+    </table>
+}
+
