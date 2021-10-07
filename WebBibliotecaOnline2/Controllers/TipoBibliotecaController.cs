@@ -28,17 +28,14 @@ namespace WebBibliotecaOnline2.Controllers
             
         }
 
-        public ActionResult Eliminar(string id)
+        public ActionResult Eliminar(int id)
         {
             try
             {   
-                var db = new Dani_BibIiotecaEntities();
-                var consulta = db.TipoBiblioteca.Where(p => p.TipoBibliotecaId.Equals(id)).ToList();
+                var db = new Dani_BibIiotecaEntities();   
 
-                foreach (TipoBiblioteca tipoBib in consulta)
-                {
-                    db.TipoBiblioteca.Remove(tipoBib);
-                }
+                var objeto = db.TipoBiblioteca.Find(id);
+                db.TipoBiblioteca.Remove(objeto);
 
                 db.SaveChanges();
                 db.Dispose();
