@@ -70,8 +70,21 @@ namespace WebBibliotecaOnline2.Controllers
         [HttpPost]
         public ActionResult Editar(TipoBiblioteca modelo)
         {
+            try {
+                var db = new Dani_BibIiotecaEntities();
+                var modeloBBDD = db.TipoBiblioteca.Find(modelo.TipoBibliotecaId);
+                modeloBBDD.Nombre = modelo.Nombre;
+                db.SaveChanges();
+                db.Dispose();
 
-            return View(modelo);
+            }
+            catch (Exception ex)
+            {
+                return ErrorController.capturaError(ex);
+
+            }
+
+            return RedirectToAction("Index", "TipoBiblioteca");
 
         }
     }
