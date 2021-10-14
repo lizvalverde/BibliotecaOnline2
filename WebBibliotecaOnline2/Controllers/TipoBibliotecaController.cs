@@ -87,5 +87,30 @@ namespace WebBibliotecaOnline2.Controllers
             return RedirectToAction("Index", "TipoBiblioteca");
 
         }
+        [HttpGet]
+        public ActionResult Nuevo()
+        {
+            TipoBiblioteca modelo = new TipoBiblioteca();
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult Nuevo(TipoBiblioteca modelo )
+        {
+
+            try
+            {
+                var db = new Dani_BibIiotecaEntities();
+                db.TipoBiblioteca.Add(modelo);
+                db.SaveChanges();
+                db.Dispose();
+
+            }
+            catch (Exception ex)
+            {
+                return ErrorController.capturaError(ex);
+
+            }
+            return RedirectToAction("Index", "TipoBiblioteca");
+        }
     }
 }
