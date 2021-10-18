@@ -12,14 +12,9 @@
     
         @Html.Partial("_Formulario",Model)
 
-        <tr>
-            <td><input class="btn btn-success" type="submit" value="Guardar" /></td>
-        </tr>
-        <tr>
-            <td>
-                <a class="btn btn-danger" href="@Url.Action("Index","TipoBiblioteca")">Cancelar</a>
-            </td>
-        </tr>
+        @Html.Partial("_BotonNuevoEditar", @Url.Action("Index","TipoBiblioteca"))
+
+
     </table>
 }
 

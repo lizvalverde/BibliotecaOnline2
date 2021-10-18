@@ -318,6 +318,8 @@
     <Content Include="Views\TipoBiblioteca\Nuevo.cshtml" />
     <Content Include="Views\TipoBiblioteca\Ver.cshtml" />
     <Content Include="Views\TipoBiblioteca\_Formulario.cshtml" />
+    <Content Include="Views\Shared\_BotonNuevoEditar.cshtml" />
+    <Content Include="Views\Shared\_BotonVer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
