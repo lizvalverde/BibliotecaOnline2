@@ -8,18 +8,18 @@
 <h2>Nuevo</h2>
 @using (Html.BeginForm("Nuevo", "TipoBiblioteca", FormMethod.Post))
 {
-    <div>
-        @Html.LabelFor(Model => Model.Nombre)
-        @Html.EditorFor(Model => Model.Nombre)
-    </div>
+    <table cellpadding="0" cellspacing="0">
+    
+        @Html.Partial("_Formulario",Model)
 
-    <tr>
-        <td><input class="btn btn-success" type="submit" value="Guardar" /></td>
-    </tr>
-    <tr>
-        <td>
-            <a class="btn btn-danger" href="@Url.Action("Index","TipoBiblioteca")">Cancelar</a>
-        </td>
-    </tr>
+        <tr>
+            <td><input class="btn btn-success" type="submit" value="Guardar" /></td>
+        </tr>
+        <tr>
+            <td>
+                <a class="btn btn-danger" href="@Url.Action("Index","TipoBiblioteca")">Cancelar</a>
+            </td>
+        </tr>
+    </table>
 }
 

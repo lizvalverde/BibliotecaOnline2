@@ -317,6 +317,7 @@
     <Content Include="Views\TipoBiblioteca\Editar.cshtml" />
     <Content Include="Views\TipoBiblioteca\Nuevo.cshtml" />
     <Content Include="Views\TipoBiblioteca\Ver.cshtml" />
+    <Content Include="Views\TipoBiblioteca\_Formulario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

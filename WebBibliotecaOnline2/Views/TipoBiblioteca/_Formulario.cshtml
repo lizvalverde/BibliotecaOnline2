@@ -1,0 +1,9 @@
+﻿@using WebBibliotecaOnline2.Models
+
+@model  TipoBiblioteca
+
+<tr>
+    @Html.HiddenFor(m => Model.TipoBibliotecaId)
+    <td>@Html.LabelFor(Model => Model.Nombre)</td>
+    <td>@Html.TextBoxFor(Model => Model.Nombre)</td>
+</tr>
