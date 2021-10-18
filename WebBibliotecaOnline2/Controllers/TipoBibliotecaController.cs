@@ -112,5 +112,24 @@ namespace WebBibliotecaOnline2.Controllers
             }
             return RedirectToAction("Index", "TipoBiblioteca");
         }
+        
+        public ActionResult Ver(int id)
+        {
+
+            try
+            {
+                TipoBiblioteca m = new TipoBiblioteca();
+                var db = new Dani_BibIiotecaEntities();
+                m = db.TipoBiblioteca.Find(id);
+                db.Dispose();
+                return View(m);
+            }
+            catch (Exception ex)
+            {
+                return ErrorController.capturaError(ex);
+
+            }
+           
+        }
     }
 }

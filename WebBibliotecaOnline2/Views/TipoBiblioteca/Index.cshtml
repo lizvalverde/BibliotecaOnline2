@@ -29,6 +29,9 @@
             {
                 <tr>
                     <td>
+                        <a href="@Url.Action("Ver","TipoBiblioteca",new { id= item.TipoBibliotecaId })">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </a>
 
                         <a href="@Url.Action("Editar","TipoBiblioteca",new { id= item.TipoBibliotecaId })">
                             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
@@ -38,6 +41,8 @@
                         <a href="@Url.Action("Eliminar","TipoBiblioteca",new { id= item.TipoBibliotecaId })">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </a>
+
+                       
                     </td>
                    
                     <td>
