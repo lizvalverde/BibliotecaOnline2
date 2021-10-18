@@ -7,26 +7,22 @@
 <h2>Ver</h2>
 @using (Html.BeginForm())
 {
-    <table cellpadding="0" cellspacing="0">
-        <tr>
-            <th colspan="2" align="center">Tipos Biblioteca</th>
-        </tr>
-        <tr>
-            <td>Id: </td>
-            <td>
-                @Html.TextBoxFor(m => Model.TipoBibliotecaId)
-            </td>
-        </tr>
-        <tr>
-            <td>Name: </td>
-            <td>
-                @Html.TextBoxFor(m => Model.Nombre)
-            </td>
-        </tr>
-       
-        <tr>
-            <td><input type="submit" value="Cancelar" /></td>
-        </tr>
-    </table>
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <th colspan="2" align="center">Tipos Biblioteca</th>
+    </tr>
+    @Html.HiddenFor(m => Model.TipoBibliotecaId)
+    <tr>
+        <td>Name: </td>
+        <td>
+            @Html.TextBoxFor(m => Model.Nombre)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a class="btn btn-danger" href="@Url.Action("Index","TipoBiblioteca")">Cancelar</a>
+        </td>
+    </tr>
+</table>
 }
 

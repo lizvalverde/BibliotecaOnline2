@@ -9,9 +9,17 @@
 @using (Html.BeginForm("Nuevo", "TipoBiblioteca", FormMethod.Post))
 {
     <div>
-        @Html.LabelFor(Model=>Model.Nombre)
+        @Html.LabelFor(Model => Model.Nombre)
         @Html.EditorFor(Model => Model.Nombre)
     </div>
-    <input type="submit" value="Guardar" />
+
+    <tr>
+        <td><input class="btn btn-success" type="submit" value="Guardar" /></td>
+    </tr>
+    <tr>
+        <td>
+            <a class="btn btn-danger" href="@Url.Action("Index","TipoBiblioteca")">Cancelar</a>
+        </td>
+    </tr>
 }
 
