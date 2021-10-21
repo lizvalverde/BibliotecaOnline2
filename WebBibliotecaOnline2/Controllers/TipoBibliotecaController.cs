@@ -68,6 +68,7 @@ namespace WebBibliotecaOnline2.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Editar(TipoBiblioteca modelo)
         {
             try {
