@@ -95,6 +95,7 @@ namespace WebBibliotecaOnline2.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Nuevo(TipoBiblioteca modelo )
         {
 
