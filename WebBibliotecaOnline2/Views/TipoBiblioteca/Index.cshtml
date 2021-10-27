@@ -12,7 +12,7 @@
          <span>Nuevo</span>
       </a>
     </div>
-    <table border="1">
+    <table border="1" id="tablaTipoBiblioteca">
         <thead>
             <tr>
                 <th>
@@ -54,4 +54,10 @@
         
     </table>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#tablaTipoBiblioteca').DataTable();
+    });
+
+</script>
 
