@@ -233,6 +233,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\DataTables-1.11.3\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.11.3\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.11.3\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.11.3\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.11.3\images\sort_desc_disabled.png" />
     <Content Include="Content\datatables.min.css" />
     <Content Include="Content\error.png" />
     <Content Include="Models\Biblioteca.Context.tt">
@@ -267,7 +272,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\datatables.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
